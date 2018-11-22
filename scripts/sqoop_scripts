@@ -1,0 +1,8 @@
+sqoop export --connect jdbc:mysql://localhost/hadoop --username root --password cloudera --table
+ countries_ip --hcatalog-table countries_ip --input-fields-terminated-by ',' --input-lines-terminated-by '\n'
+
+sqoop export --connect jdbc:mysql://localhost/hadoop --username root --password cloudera --table
+ top_ten_products_for_each_category --hcatalog-table top_ten_products_for_each_category --input-fields-terminated-by ',' --input-lines-terminated-by '\n'
+
+sqoop export --connect jdbc:mysql://localhost/hadoop --username root --password cloudera --table
+ most_purchased_categories --hcatalog-table most_purchased_categories --input-fields-terminated-by ',' --input-lines-terminated-by '\n'

@@ -1,0 +1,13 @@
+CREATE TABLE top_ten_products_for_each_category AS
+SELECT *
+FROM
+(
+   SELECT product_category,product_name, counts, rank() over(PARTITION BY product_category order by counts desc) as row_number
+   FROM (
+        SELECT product_name, product_category, count(*) as counts
+        FROM events1
+        GROUP BY product_category, product_name
+   ) A
+) B
+WHERE row_number < 10
+order by b.counts desc;

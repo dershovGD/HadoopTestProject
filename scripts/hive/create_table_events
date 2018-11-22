@@ -1,0 +1,10 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS events(
+product_name STRING,
+product_price DECIMAL(38,12),
+purchase_date TIMESTAMP,
+product_category STRING,
+ip_address STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+LOCATION '/user/cloudera/events'
