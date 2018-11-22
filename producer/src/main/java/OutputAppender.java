@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-public class OutputWriter {
+public class OutputAppender {
 
     public void writeToFile(Record record, Path path) throws IOException {
         if (!Files.exists(path)) {
@@ -17,5 +17,6 @@ public class OutputWriter {
     public void tcpSend(Record record, Writer writer) throws IOException {
             final String s = record.csvFormat().append(System.lineSeparator()).toString();
             writer.append(s);
+            writer.flush();
     }
 }

@@ -6,12 +6,12 @@ import java.time.Period;
 import static org.junit.Assert.assertTrue;
 
 public class ProducerTest {
-
+    private static final int numberToTest = 30;
 
     @Test
     public void checkDate() {
 
-        for (int i = 0; i < Main.numberToTest; i++) {
+        for (int i = 0; i < numberToTest; i++) {
             Record record = new Producer().produce();
             Period period1 = Period.between(record.getDate().toLocalDateTime().toLocalDate(), Producer.lastDayOfWeek);
             assertTrue(period1.getDays() >= 0 && period1.getDays() < 7);
@@ -23,7 +23,7 @@ public class ProducerTest {
 
     @Test
     public void checkPrice() {
-        for (int i = 0; i < Main.numberToTest; i++){
+        for (int i = 0; i < numberToTest; i++){
             Record record = new Producer().produce();
             assertTrue(record.getProductPrice().compareTo(BigDecimal.ZERO) >= 0);
         }
