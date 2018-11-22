@@ -20,7 +20,7 @@ public class Producer {
     private final int daysInWeek = 7;
 
     public Record produce() {
-        String productNameGenerated = RandomStringUtils.randomAlphanumeric(10);
+        String productNameGenerated = RandomStringUtils.randomAlphanumeric(2);
         BigDecimal productPriceGenerated = new BigDecimal(Math.abs(random.nextGaussian()) * scale);
         String productCategoryGenerated = RandomStringUtils.randomAlphanumeric(3);
         Timestamp dateTimeGenerated = generateDateTime();

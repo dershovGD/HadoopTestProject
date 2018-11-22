@@ -10,15 +10,9 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile 'org.apache.commons:commons-lang3:3.5'
+    testCompile libraries.junit
+    compile libraries.lang
 }
 
 shadowJar {
