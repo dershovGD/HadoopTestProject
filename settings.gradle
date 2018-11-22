@@ -1,4 +1,5 @@
 rootProject.name = 'hadoop-project'
 include 'producer'
 include 'DateTimeInterceptor'
+include 'ipaddress-join-udf'
 
