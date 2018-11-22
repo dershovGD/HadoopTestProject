@@ -10,9 +10,13 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'com.github.johnrengelman.shadow'
 
+sourceCompatibility = 1.8
+
 dependencies {
     testCompile libraries.junit
     compile libraries.lang
+    compile libraries.logger
+
 }
 
 shadowJar {

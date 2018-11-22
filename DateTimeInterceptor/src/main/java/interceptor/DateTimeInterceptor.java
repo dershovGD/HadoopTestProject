@@ -3,14 +3,13 @@ package interceptor;
 import org.apache.flume.Context;
 import org.apache.flume.Event;
 import org.apache.flume.interceptor.Interceptor;
-import org.joda.time.LocalDateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.sql.Timestamp;
-
 import java.util.List;
 import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DateTimeInterceptor implements Interceptor {
     @Override
@@ -24,6 +23,8 @@ public class DateTimeInterceptor implements Interceptor {
         String body = new String(bytes);
         Timestamp localDateTime = Timestamp.valueOf(body.split(",")[2]);
         long time = localDateTime.getTime();
+        Logger slf4jLogger = LoggerFactory.getLogger("some-logger");
+        slf4jLogger.info("Intercepted timestamp= {}", localDateTime);
 
         Map<String, String> headers = event.getHeaders();
         headers.put("timestamp", String.valueOf(time));
