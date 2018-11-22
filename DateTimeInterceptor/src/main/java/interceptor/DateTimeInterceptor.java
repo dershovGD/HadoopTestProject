@@ -23,7 +23,7 @@ public class DateTimeInterceptor implements Interceptor {
         String body = new String(bytes);
         Timestamp localDateTime = Timestamp.valueOf(body.split(",")[2]);
         long time = localDateTime.getTime();
-        Logger slf4jLogger = LoggerFactory.getLogger("some-logger");
+        Logger slf4jLogger = LoggerFactory.getLogger("DateTimeInterceptor");
         slf4jLogger.info("Intercepted timestamp= {}", localDateTime);
 
         Map<String, String> headers = event.getHeaders();

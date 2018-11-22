@@ -5,12 +5,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
         Producer producer = new Producer();
         Socket clientSocket = new Socket("127.0.0.1", 44444);
         OutputAppender appender = new OutputAppender();
         final int numberToTest = Integer.parseInt(args[0]);
-        Logger slf4jLogger = LoggerFactory.getLogger("some-logger");
+        Logger slf4jLogger = LoggerFactory.getLogger("Producer");
 
         try (BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
              BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
