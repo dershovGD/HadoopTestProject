@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+dependencies {
+    testCompile libraries.junit
+    compile libraries.flume_core
+    compile libraries.joda_time
+    testCompile libraries.mockito
+}
