@@ -1,1 +1,1 @@
-/usr/lib/flume-ng/bin/flume-ng agent --conf conf --conf-file example.conf --name a1 -Dflume.root.logger=INFO,console
+/usr/lib/flume-ng/bin/flume-ng agent --conf conf --conf-file example.conf --name a1 --classpath DateTimeInterceptor-1.0-SNAPSHOT.jar -Dflume.root.logger=INFO,console

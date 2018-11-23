@@ -1,0 +1,12 @@
+CREATE TABLE events_partitioned (product_name STRING,
+product_price DECIMAL(38,12),
+purchase_date TIMESTAMP,
+product_category STRING,
+ip_address STRING)
+PARTITIONED BY (part_date TIMESTAMP)
+
+INSERT INTO events_partitioned
+PARTITION(part_date)
+select *,
+to_date(purchase_date)
+from events
