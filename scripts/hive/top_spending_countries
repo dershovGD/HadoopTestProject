@@ -1,0 +1,7 @@
+create table top_spending_countries
+select country_name, sum(product_price) as total_purchases
+from countries_ip, events
+where join_network_ip(countries_ip.network, events.ip_address) 
+group by country_name
+order by total_purchases desc
+limit 10;

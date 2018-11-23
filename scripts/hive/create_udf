@@ -1,0 +1,1 @@
+create function join_network_ip as 'IpAddressesJoiner' using jar 'hdfs://localhost:8020/user/cloudera/ipaddress-join-udf-1.0-SNAPSHOT.jar';

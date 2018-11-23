@@ -1,11 +1,11 @@
-import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class IpAddressesJoinerTest {
     @Test
-    public void checkEvaluatingGoodCase() throws HiveException {
+    public void checkEvaluatingGoodCase() {
 
         String network = "99.38.94.0/24";
         String ip = "99.38.94.72";
