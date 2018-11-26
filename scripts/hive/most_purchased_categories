@@ -1,6 +1,6 @@
 create table most_purchased_categories as
 select product_category, count(*) as counts
-from events
+from events_partitioned
 group by product_category
 order by counts desc
 limit 10;
