@@ -1,0 +1,17 @@
+spark-submit --jars mysql-connector-java-5.1.47.jar \
+--class top_categories.TopNCategoriesRDD spark-example-assembly-0.1.jar /user/dershov/events
+
+spark-submit --jars mysql-connector-java-5.1.47.jar \
+--class top_categories.TopNCategoriesDF spark-example-assembly-0.1.jar /user/dershov/events
+
+spark-submit --jars mysql-connector-java-5.1.47.jar \
+--class top_products_by_categories.TopNProductsByCategoryDF spark-example-assembly-0.1.jar /user/dershov/events
+
+spark-submit --jars mysql-connector-java-5.1.47.jar \
+--class top_products_by_categories.TopNProductsByCategoryRDD spark-example-assembly-0.1.jar /user/dershov/events
+
+spark-submit --jars mysql-connector-java-5.1.47.jar \
+--class top_spending_countries.TopNSpendingCountriesDF spark-example-assembly-0.1.jar /user/dershov/events /user/dershov/countries
+
+spark-submit --jars mysql-connector-java-5.1.47.jar \
+--class top_spending_countries.TopNSpendingCountriesRDD spark-example-assembly-0.1.jar /user/dershov/events /user/dershov/countries
